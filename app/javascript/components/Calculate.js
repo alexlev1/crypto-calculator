@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { throws } from 'assert';
 
 class Calculate extends Component {
   constructor(props) {

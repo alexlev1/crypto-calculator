@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import Search from './Search'
 import Calculate from './Calculate'
+import Portfolio from './Portfolio'
+
 import axios from 'axios'
 
 class PortfolioContainer extends Component {
@@ -37,7 +39,7 @@ class PortfolioContainer extends Component {
   handleSelect(e){
     e.preventDefault()
     const id = e.target.getAttribute('data-id')
-    const activeCurrency = this.state.search_results.filter ( item => item.id == parseInt(id))
+    const activeCurrency = this.state.search_results.filter( item => item.id == parseInt(id))
     this.setState({
       active_currency: activeCurrency[0],
       search_results: []
@@ -87,8 +89,13 @@ class PortfolioContainer extends Component {
       handleChange={this.handleChange} />
 
     return(
-      <div>
-        {searchOrCalculate}
+      <div className="grid">
+        <div className="left">
+          {searchOrCalculate}
+        </div>
+        <div className="right">
+          <Portfolio portfolio={this.state.portfolio}/>
+        </div>
       </div>
     )
   }
