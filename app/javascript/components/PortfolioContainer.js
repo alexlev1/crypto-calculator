@@ -6,7 +6,7 @@ import Portfolio from './Portfolio'
 import axios from 'axios'
 
 class PortfolioContainer extends Component {
-  constructor(props) {
+  constructor(props){
     super(props)
 
     this.state = {
